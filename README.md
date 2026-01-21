@@ -68,11 +68,10 @@ vsw > tvbox
 ---
 
 
-### Compilando e Executando;
+## 💻 Compilando e Executando;
 
-Como compilar e utilizar a shell:
 
-## 📋 Pré-requisitos
+### 📋 Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado:
 
@@ -115,16 +114,23 @@ uv pip install -r config/src-py/requisitos.txt
 
 ---
 
-## 🔧 Passo 3: Compilar o Projeto C
+## 🔧 Passo 3: Compilar os scripts
 
 O núcleo do projeto é escrito em C. Use o script de build automatizado:
 
 ```bash
-# Dar permissão de execução aos scripts
+# Dar permissão de execução aos scripts e rodar script de configuração
 chmod +x config/src-sh/*.sh
 
-# Executar o alias "build" que compila todos os arquivos c e roda a shell.
+./config-vsw-shell.sh
+
+ou
+
+sh config-vsw-shell.sh
+
+# Executar o alias "build" no diretório "src".
 build
+
 ```
 
 
@@ -164,9 +170,9 @@ difere
 ```
 ---
 
-### Desativar ambiente virtual (quando terminar)
+## 🐍 Desativar ambiente virtual (quando terminar)
 
-deactivate
+**`source .venv/bin/deactivate`**
 
 ---
 
@@ -178,9 +184,6 @@ deactivate
 | `uv: command not found` | Reinstale uv e adicione ao PATH |
 | `Permission denied` | Execute `chmod +x` nos scripts |
 | `Python module not found` | Verifique se o venv está ativo com `source .venv/bin/activate` |
-
----
-
 
 ---
 
