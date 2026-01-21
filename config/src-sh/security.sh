@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # vsw-security.sh - Biblioteca de validação e sanitização
 
 # Cores padronizadas
@@ -64,7 +65,7 @@ ler_input_validado() {
   return 0
 }
 
-# Regex patterns predefinidos
+# Regex patterns predefinidos --> regex --> regular expressions
 REGEX_IP='^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'
 REGEX_PORTA='^[0-9]{1,5}$'
 REGEX_PROTOCOLO='^[a-zA-Z0-9._\-]{3,50}$'
