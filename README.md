@@ -68,7 +68,129 @@ vsw > tvbox
 ---
 
 
-## 🔒 Detalhes de Segurança
+### Compilando e Executando;
+
+Como compilar e utilizar a shell:
+
+## 📋 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+```bash
+# Compilador GCC e ferramentas de build
+sudo pacman -S base-devel  # Arch Linux
+# ou
+sudo apt install build-essential  # Debian/Ubuntu
+
+# uv (gerenciador de pacotes Python ultrarrápido)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.cargo/env  # Adicione ao PATH
+```
+
+---
+
+## 🚀 Passo 1: Clone o Repositório
+
+```bash
+git clone <https://github.com/FelipeArnt/vsw-shell>
+cd vsw-shell
+```
+
+---
+
+## 🐍 Passo 2: Configurar Ambiente Python com uv
+
+```bash
+# Criar ambiente virtual na raiz do projeto
+uv venv
+
+# Ativar o ambiente virtual
+source .venv/bin/activate
+
+# Instalar dependências Python (se houver)
+uv pip install -r config/src-py/requisitos.txt
+```
+
+> **Nota**: O ambiente python deve permanecer ativo durante toda a sessão de desenvolvimento. Se fechar o terminal, reative com `source .venv/bin/activate`.
+
+---
+
+## 🔧 Passo 3: Compilar o Projeto C
+
+O núcleo do projeto é escrito em C. Use o script de build automatizado:
+
+```bash
+# Dar permissão de execução aos scripts
+chmod +x config/src-sh/*.sh
+
+# Executar o alias "build" que compila todos os arquivos c e roda a shell.
+build
+```
+
+
+---
+
+## 🛠️ Passo 4: Utilizar Scripts Auxiliares
+
+### Scripts Shell (`config/src-sh/`)
+
+```bash
+# Ferramentas gerais do vsw
+./config/src-sh/vsw-tools.sh
+
+# Scripts específicos
+./config/src-sh/security.sh      # Funções de segurança
+./config/src-sh/router.sh        # Configuração de roteador
+./config/src-sh/tvbox.sh         # Gerenciamento de TV Box
+./config/src-sh/clean.sh         # Limpeza do projeto
+```
+
+### Scripts Python (`config/src-py/`)
+
+Com o ambiente virtual ativo, e rodando a vsw-shell execute os builtins commands abaixo:
+
+```bash
+# Comparação automática (exemplo)
+comparador
+
+# Automação de metrologia
+autometro
+
+# Geração de tabelas
+tabela
+
+# Diff especializado
+difere
+
+roteador
+
+tv-box
+```
+
+---
+
+### Desativar ambiente virtual (quando terminar)
+
+deactivate
+
+---
+
+## 🐛 Solução de Problemas
+
+| Problema | Solução |
+|----------|---------|
+| `gcc: command not found` | Instale `base-devel` ou `build-essential` |
+| `uv: command not found` | Reinstale uv e adicione ao PATH |
+| `Permission denied` | Execute `chmod +x` nos scripts |
+| `Python module not found` | Verifique se o venv está ativo com `source .venv/bin/activate` |
+
+---
+
+
+---
+
+
+## 🔒 Detalhes de segurança do código
 
 ### Sanitização em C (src/utils.c)
 ```c
