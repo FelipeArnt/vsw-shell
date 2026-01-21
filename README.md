@@ -163,7 +163,7 @@ ler_input_validado() {
 
 ---
 
-**Desenvolvido por Felipe Arnt | LABELO/VSW - Metrologia Legal & Segurança Cibernética**
+**Desenvolvido por Felipe Arnt | LABELO / VSW - Metrologia Legal & Segurança Cibernética**
 
 --- 
 
