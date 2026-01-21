@@ -8,60 +8,22 @@
 ![Security](https://img.shields.io/badge/Security-Audit%20Required-yellow?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Beta-orange?style=for-the-badge)
 
+
+<img width="750" height="204" alt="demo-vsw-shell" src="https://github.com/user-attachments/assets/b1e3491d-e152-47c1-8d71-22acf11b69e0" />
+
 ---
 
 ## 🎯 Visão Geral
 
 A **VSW-Shell** é uma shell interativa customizada desenvolvida para profissionais de metrologia legal e testes de segurança cibernética. Ela fornece uma interface profissional com builtins especializados, wrappers seguros e integração com ferramentas Python & Basg para automação de ensaios.
 
-### Características Principais
-- ✅ **Input sanitizado** em todos os comandos
-- ✅ **Execução segura** via `fork()+exec()` (sem `system()`)
-- ✅ **Output colorido** para melhor legibilidade
-- ✅ **Histórico persistente** (`.vsw_history`)
-- ✅ **Modular**: C + Python + Bash
-- ✅ **Pronta para auditoria**: Código documentado e validado
-
----
-
-## 📦 Requisitos de Sistema
-
-### Dependências de Compilação
-```bash
-gcc >= 11.0
-make (opcional)
-bash >= 4.0 (para nameref)
-```
-
-### Dependências de Runtime
-```bash
-# Ferramentas de rede
-nmap, netcat (nc), tcpdump, adb (para TV-BOX)
-
-# Utilitários de hash
-md5sum, sha1sum, sha256sum, sha512sum, crc32
-
-# Python 3.9+
-python3, python3-pip
-
-# Ambiente virtual (recomendado)
-uv (ou pip + venv)
-```
 
 ### Instalação no Arch Linux
 ```bash
 sudo pacman -S gcc bash python nmap tcpdump adb md5deep libarchive
 yay -S uv  # ou instale via pip
 ```
-
----
-
-## 🎮 Uso
-
-### Iniciando a Shell
-```bash
-vsw
-```
+----
 
 ### Comandos Disponíveis
 
@@ -136,6 +98,3 @@ ler_input_validado() {
 ---
 
 **Desenvolvido por Felipe Arnt | LABELO / VSW - Metrologia Legal & Segurança Cibernética**
-
---- 
-
