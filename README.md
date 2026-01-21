@@ -72,7 +72,7 @@ vsw
 | `tools` | Canivete suíço (hash, nmap, tcpdump) | ✅ Sanitizado |
 | `tvbox` | Auditoria de TV-BOX via ADB | ✅ Sanitizado |
 | `roteador` | Scan de roteadores com nmap | ✅ Sanitizado |
-| `comparador` | Comparação de dados (Python) | ✅ Estável |
+| `comparador` | Comparação de diretórios (Python) | ✅ Estável |
 | `tabela` | Geração de tabelas (Python) | ✅ Estável |
 | `difere` | Diff de arquivos (Python) | ✅ Estável |
 | `autometro` | Automação de ensaios (Python) | ✅ Estável |
