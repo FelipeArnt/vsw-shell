@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "[vsw-info]: Iniciando script para configurar o ambiente da vsw-shell e seus comandos."
+printf "\n [vsw-info]: Iniciando script para configurar o ambiente da vsw-shell e seus comandos."
 
 configurar_comandos() {
   # Criar diretório para bibliotecas
@@ -26,7 +26,7 @@ configurar_comandos() {
   sudo cp -r src-py/differ.py /usr/local/bin/differ.py
   sudo cp -r src-py/tablelo.py /usr/local/bin/tabela.py
 
-  echo "Script finalizado com sucesso!"
+  printf "\n [vsw-config]: Script finalizado com sucesso!"
 }
 
 instalar_dependencias() {
