@@ -132,41 +132,36 @@ build
 
 ## 🛠️ Passo 4: Utilizar Scripts Auxiliares
 
-### Scripts Shell (`config/src-sh/`)
+### Comandos 
 
 ```bash
 # Ferramentas gerais do vsw
-./config/src-sh/vsw-tools.sh
+tools         # Ferramentas
+build         # Compilador autoamtico    
+roteador      # Configuração de roteador
+tvbox         # Gerenciamento de TV Box
+clean         # Limpeza do diretório
 
-# Scripts específicos
-./config/src-sh/security.sh      # Funções de segurança
-./config/src-sh/router.sh        # Configuração de roteador
-./config/src-sh/tvbox.sh         # Gerenciamento de TV Box
-./config/src-sh/clean.sh         # Limpeza do projeto
 ```
 
-### Scripts Python (`config/src-py/`)
+### Scripts Python  e (`config/src-py/`)
 
-Com o ambiente virtual ativo, e rodando a vsw-shell execute os builtins commands abaixo:
+Com o ambiente virtual ativo, e rodando a vsw-shell execute os comandos:
 
 ```bash
-# Comparação automática (exemplo)
+# Comparação de diretórios
 comparador
 
-# Automação de metrologia
+# Automação de ensaios de metrologia
 autometro
 
-# Geração de tabelas
+# Extração de tabelas de documentos pdf
 tabela
 
-# Diff especializado
+# Diff 
 difere
 
-roteador
-
-tv-box
 ```
-
 ---
 
 ### Desativar ambiente virtual (quando terminar)
