@@ -1,4 +1,3 @@
-```markdown
 # VSW-Shell 🛡️
 
 > **Shell Interativa para Metrologia Legal & Testes de Segurança Cibernética**
@@ -167,5 +166,4 @@ ler_input_validado() {
 **Desenvolvido por Felipe Arnt | LABELO/VSW - Metrologia Legal & Segurança Cibernética**
 
 --- 
-```
 
