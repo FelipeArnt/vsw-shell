@@ -7,6 +7,7 @@
 # include <sys/wait.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdbool.h>
 
 /* Cores */
 #define Y     "\033[1;33m"
