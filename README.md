@@ -14,7 +14,7 @@
 
 ## 🎯 Visão Geral
 
-A **VSW-Shell** é uma shell interativa customizada desenvolvida para profissionais de metrologia legal e testes de segurança cibernética. Ela fornece uma interface profissional com builtins especializados, wrappers seguros e integração com ferramentas Python & Basg para automação de ensaios.
+A **VSW-Shell** é uma shell interativa customizada desenvolvida para técnicos responsáveis do laboratório de **`Verificação de Software`** para ensaios de metrologia legal e de segurança cibernética. Ela fornece uma interface profissional com builtins especializados, wrappers seguros e integração com ferramentas Python & Bash para automação de ensaios.
 
 
 ### Instalação no Arch Linux
