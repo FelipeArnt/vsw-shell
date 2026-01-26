@@ -1,0 +1,3 @@
+https://github.com/FelipeArnt/vsw-shell
+#https://github.com/terrillmoore/NIST-Statistical-Test-Suite
+
