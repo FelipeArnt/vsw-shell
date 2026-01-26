@@ -91,7 +91,7 @@ source $HOME/.cargo/env  # Adicione ao PATH
 ## 🚀 Passo 1: Clone o Repositório
 
 ```bash
-git clone <https://github.com/FelipeArnt/vsw-shell>
+git clone https://github.com/FelipeArnt/vsw-shell
 cd vsw-shell
 ```
 
