@@ -110,7 +110,7 @@ source .venv/bin/activate
 uv pip install -r config/src-py/requisitos.txt
 ```
 
-> **Nota**: O ambiente python deve permanecer ativo durante toda a sessão de desenvolvimento. Se fechar o terminal, reative com `source .venv/bin/activate`.
+> **Nota**: O ambiente python deve permanecer ativo durante toda a sessão de ensaio. Se fechar o terminal, reative com `source .venv/bin/activate`.
 
 ---
 
