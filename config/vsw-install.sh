@@ -1,58 +1,59 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Script para setup de ferramentas de Metrologia Legal/Anatel - VSW
+# Script para setup de ferramentas de Metrologia Legal / Anatel - VSW
+
+set -e
+
+DATA_DIR="/usr/local/share/vsw-shell"
+URLS_FILE="$DATA_DIR/urls.txt"
+PKGS_FILE="$DATA_DIR/pacotes.txt"
 
 verificar_dependencias() {
 
-  local files_dir="$HOME/vsw-shell/config/arquivos/"
-  local urls_file="$files_dir/urls.txt"
-  local pkgs_file="$files_dir/pacotes.txt"
-
-  # 1. Verifica se o comando git existe no sistema
+  # Verifica se o git existe
   if ! command -v git &>/dev/null; then
-    echo "[vsw-error]: O comando 'git' não foi encontrado. Por favor, instale o Git e tente novamente."
+    echo "[vsw-error]: O comando 'git' não foi encontrado. Instale o Git e tente novamente."
     exit 1
   fi
 
-  # 2. Verifica se o arquivo de URLs existe
-  if [ ! -f "$urls_file" ]; then
-    echo "ERRO: O arquivo '$urls_file' não foi encontrado no diretório atual."
-    echo "Por favor, crie este arquivo com as URLs dos repositórios, uma por linha."
+  # Verifica se os arquivos existem
+  if [[ ! -f "$URLS_FILE" ]]; then
+    echo "[vsw-error]: Arquivo '$URLS_FILE' não encontrado."
+    exit 1
+  fi
+
+  if [[ ! -f "$PKGS_FILE" ]]; then
+    echo "[vsw-error]: Arquivo '$PKGS_FILE' não encontrado."
     exit 1
   fi
 }
 
 instalar_ferramentas() {
 
-  local files_dir="$HOME/vsw-shell/config/arquivos"
-  local urls_file="$files_dir/urls.txt"
-  local pkgs_file="$files_dir/pacotes.txt"
+  echo "[vsw-info]: Iniciando download das ferramentas..."
 
-  echo 'Iniciando download das ferramentas...'
-  # 3. Lê o arquivo linha por linha
-  while IFS= read -r url || [ -n "$url" ]; do
-    # 4. Ignora linhas em branco ou comentários (que começam com #)
-    if [[ -z "$url" || "$url" == \#* ]]; then
-      continue
-    fi
+  while IFS= read -r url || [[ -n "$url" ]]; do
+    [[ -z "$url" || "$url" =~ ^# ]] && continue
 
     echo "-----------------------------------------------------"
     echo "Clonando: $url"
 
-    # 5. Executa o git clone e verifica se houve erro
-    if cd $HOME && git clone "$url"; then
+    if git clone "$url"; then
       echo "Sucesso: Repositório clonado com êxito."
     else
-      echo "AVISO: Falha ao clonar o repositório $url. Verifique a URL ou sua conexão."
+      echo "AVISO: Falha ao clonar $url"
     fi
+
     echo "-----------------------------------------------------"
     echo
-  done <"$urls_file"
+  done < "$URLS_FILE"
 
-  sudo pacman -Syyuu - <$pkgs_file
+  echo "[vsw-info]: Instalando pacotes do sistema..."
+  sudo pacman -Syyuu - < "$PKGS_FILE"
 
-  echo "Setup vsw-linux finalizado!"
+  echo "[vsw-success]: Setup vsw-linux finalizado!"
 }
-# Chama a função para iniciar o processo de setup
+
 verificar_dependencias
 instalar_ferramentas
+
