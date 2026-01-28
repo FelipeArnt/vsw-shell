@@ -3,8 +3,10 @@
 # Script para setup de ferramentas de Metrologia Legal/Anatel - VSW
 
 verificar_dependencias() {
-  local urls_file="$HOME/configurar-linux/arquivos/urls.txt"
-  local pkgs_file="$HOME/configurar-linux/arquivos/pacotes.txt"
+
+  local files_dir="$HOME/vsw-shell/config/arquivos/"
+  local urls_file="$files_dir/urls.txt"
+  local pkgs_file="$files_dir/pacotes.txt"
 
   # 1. Verifica se o comando git existe no sistema
   if ! command -v git &>/dev/null; then
@@ -22,11 +24,10 @@ verificar_dependencias() {
 
 instalar_ferramentas() {
 
-  local home_dir="$HOME"
-  local config_dir="$home_dir/vsw-shell/config/arquivos/"
-  local urls_file="$home_dir/vsw-shell/config/arquivos/urls.txt"
-  local pkgs_file="$home_dir/vsw-shell/config/arquivos/pacotes.txt"
-  
+  local files_dir="$HOME/vsw-shell/config/arquivos"
+  local urls_file="$files_dir/urls.txt"
+  local pkgs_file="$files_dir/pacotes.txt"
+
   echo 'Iniciando download das ferramentas...'
   # 3. Lê o arquivo linha por linha
   while IFS= read -r url || [ -n "$url" ]; do
@@ -39,7 +40,7 @@ instalar_ferramentas() {
     echo "Clonando: $url"
 
     # 5. Executa o git clone e verifica se houve erro
-    if cd $home_dir && git clone "$url"; then
+    if cd $HOME && git clone "$url"; then
       echo "Sucesso: Repositório clonado com êxito."
     else
       echo "AVISO: Falha ao clonar o repositório $url. Verifique a URL ou sua conexão."
