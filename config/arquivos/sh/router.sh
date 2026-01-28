@@ -55,6 +55,7 @@ exec_ensaio() {
   # APENAS usar variáveis já validadas
   sudo nmap -sV "$IP" >"${OUTPUT_DIR}/${PREFIXO}_sV.txt"
   sudo nmap -sV -webxml -oX vuln.xml -v --script vuln "$IP"
+  sudo nmap -sV -webxml -oX vulners.xml -v --script vulners "$IP"
 }
 
 save_ensaio() {
