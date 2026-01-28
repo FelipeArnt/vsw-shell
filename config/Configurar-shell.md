@@ -1,8 +1,8 @@
-# Diretório "scripts"
+# Diretório "config"
 
-Apenas rodar o comando `./config-vsw-shell.sh` ou `bash config-vsw-shell.sh`. Todos os arquivos necessários serão copiado para **`/usr/local/bin/`**.
+Apenas rodar o comando `./shell-config.sh` ou `bash shell-config.sh`. Todos os arquivos necessários serão copiado para **`/usr/local/bin/`**.
 
-
+Depois, utilizar o comando `./vsw-install.sh` ou `bash vsw-install.sh` 
 
 ## Demonstração Visual
 

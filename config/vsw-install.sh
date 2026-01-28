@@ -3,7 +3,6 @@
 # Script para setup de ferramentas de Metrologia Legal/Anatel - VSW
 
 verificar_dependencias() {
-
   local urls_file="$HOME/configurar-linux/arquivos/urls.txt"
   local pkgs_file="$HOME/configurar-linux/arquivos/pacotes.txt"
 
@@ -24,9 +23,10 @@ verificar_dependencias() {
 instalar_ferramentas() {
 
   local home_dir="$HOME"
-  local urls_file="$home_dir/configurar-linux/arquivos/urls.txt"
-  local pkgs_file="$home_dir/configurar-linux/arquivos/pacotes.txt"
-
+  local config_dir="$home_dir/vsw-shell/config/arquivos/"
+  local urls_file="$home_dir/vsw-shell/config/arquivos/urls.txt"
+  local pkgs_file="$home_dir/vsw-shell/config/arquivos/pacotes.txt"
+  
   echo 'Iniciando download das ferramentas...'
   # 3. Lê o arquivo linha por linha
   while IFS= read -r url || [ -n "$url" ]; do
