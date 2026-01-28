@@ -1,8 +1,8 @@
 # Diretório "config"
 
-Apenas rodar o comando `./shell-config.sh` ou `bash shell-config.sh`. Todos os arquivos necessários serão copiado para **`/usr/local/bin/`**.
-
-Depois, utilizar o comando `./vsw-install.sh` ou `bash vsw-install.sh` 
+1. O comando `chmod +x *.sh` torna todos os arquivos .sh do diretório em arquivos executáveis.
+2. Após o primeiro passo, basta rodar o comando `./shell-config.sh` ou `bash shell-config.sh`. Todos os arquivos necessários serão copiado para **`/usr/local/bin/`**.
+3. Depois, utilizar o comando `./vsw-install.sh` ou `bash vsw-install.sh` 
 
 ## Demonstração Visual
 
