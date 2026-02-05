@@ -4,7 +4,7 @@ init_configs() {
 
   local pendrive=/dev/sdb1
   local distro=~/Downloads/EndeavourOS_Ganymede-Neo-2026.01.12.iso
-
+  # Colocar as distros em um array e iterar na hora de escolher a distro
   printf "\n [vsw-flash]: Procurando pendrive...\n"
   lsblk && lsblk | grep sdb1
 
