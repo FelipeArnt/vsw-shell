@@ -43,3 +43,15 @@ vsw-shell (C)
     ├── Comando: tabela ─────→ vsw_python_run_script("tablelo", args)
     │
     └── vsw_python_fini() ──→ Py_Finalize() [ao sair]
+
+## Vantagens sobre fork+execl:
+
+| Aspecto               | fork+execl                       | Python C API                        |
+| --------------------- | -------------------------------- | ----------------------------------- |
+| Velocidade            | ~50-100ms (inicialização Python) | ~1-5ms (já inicializado)            |
+| Memória               | Processo separado (isolado)      | Mesmo processo (compartilhado)      |
+| Estado                | Perdido entre chamadas           | Mantido (variáveis globais, caches) |
+| Complexidade de dados | Apenas strings/args              | Qualquer objeto Python              |
+| Segurança             | Melhor (isolamento)              | Cuidar com código Python malicioso |
+| Debugging             | strace, logs separados           | Integrado, mas mais complexo        |
+
