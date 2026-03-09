@@ -74,7 +74,7 @@ int vsw_cd(char **args)
   if (!limpador(args[1], caminho_seguro, sizeof(caminho_seguro))) {
     return 1;
   }
-  if (chdir(args[1]) != 0) {
+  if (chdir(caminho_seguro) != 0) {
     perror(Y"[vsw-error]");
   }
   return 1;
