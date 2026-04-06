@@ -1,0 +1,41 @@
+# Ferramentas de desenvolvimento
+cppcheck
+git
+cmake
+gdb
+clang
+gcc
+nodejs
+npm
+
+# Editores e IDEs
+neovim
+
+# Ferramentas de terminal
+tmux
+fzf
+curl
+wget
+net-tools
+ripgrep
+p7zip-full
+
+# Ferramentas de sistema
+fastfetch
+coreutils
+binutils
+nmap
+
+# Ferramentas Android
+android-tools-adb
+android-tools-fastboot
+
+# Captura de tela
+flameshot
+
+# Análise de binários
+binwalk
+
+# OBS Studio (adicionar PPA antes)
+obs-studio
+

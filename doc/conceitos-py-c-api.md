@@ -27,6 +27,17 @@ Py_DECREF(str);   // refcnt = 0 → Python libera memória!
 
 Fundamental lembra que:
 
-- Funções PySomething_New/From que retornam PyObject* --> eu sou dono da referência --> DECREF quando terminar;
+- Funções `PySomething_New/From` que retornam `PyObject*` --> eu sou dono da referência --> DECREF quando terminar;
 - Se eu passo o objeto para outra estrutura que guarda ele --> INCREF antes, DECREF sua cópia;
-- PyTuple_SetItem, PyList_SetItem roubam referências (Não precisa DECREF depois)
+- `PyTuple_SetItem`, `PyList_SetItem` roubam referências (Não precisa DECREF depois)
+
+## Conversões
+
+| C → Python      | Função                        | Python → C | Função               |
+| --------------- | ----------------------------- | ---------- | -------------------- |
+| `int/long`      | `PyLong_FromLong()`           | `long`     | `PyLong_AsLong()`    |
+| `double`        | `PyFloat_FromDouble()`        | `double`   | `PyFloat_AsDouble()` |
+| `char*`         | `PyUnicode_FromString()`      | `char*`    | `PyUnicode_AsUTF8()` |
+| `char*` (bytes) | `PyBytes_FromString()`        | `char*`    | `PyBytes_AsString()` |
+| `void*` (raw)   | `PyBytes_FromStringAndSize()` | -          | -                    |
+
