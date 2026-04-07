@@ -53,7 +53,7 @@ init_ensaio() {
 exec_ensaio() {
   log "Iniciando ensaios funcionais no dispositivo..."
   # APENAS usar variáveis já validadas
-  sudo nmap -sV "$IP" >"${OUTPUT_DIR}/${PREFIXO}_sV.txt"
+  # nmap utilizando os scripts "vuln" e "vulners"
   sudo nmap -sV -webxml -oX vuln.xml -v --script vuln "$IP"
   sudo nmap -sV -webxml -oX vulners.xml -v --script vulners "$IP"
 }
@@ -64,6 +64,7 @@ save_ensaio() {
   "Protocolo": "$PROTOCOLO",
   "Orcamento": "$ORCAMENTO",
   "IP": "$IP"
+  "Portas abertas": "$(sudo nmap -sV -v "$IP")"
 }
 EOF
   log "Ensaio funcional finalizado em ${OUTPUT_DIR}"
