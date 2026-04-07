@@ -107,7 +107,7 @@ int vsw_tvbox(char **args)
 
   pid_t pid = fork();
   if (pid == 0) {
-    execl("/bin/sh", "sh", script, NULL);
+    execl("/bin/bash", "bash", script, NULL);
     perror(RED "[vsw-error]: Falha ao executar tvbox..." RST);
     exit(EXIT_FAILURE);  
   }
@@ -132,7 +132,7 @@ int vsw_roteador(char **args)
 
   pid_t pid = fork();
   if (pid == 0) {
-    execl("/bin/sh", "sh", script, NULL);
+    execl("/bin/bash", "bash", script, NULL);
     perror(RED "[vsw-error]: Falha ao executar roteador..." RST);
     exit(EXIT_FAILURE);  
   }
@@ -158,7 +158,7 @@ int vsw_tools(char **args)
 
   pid_t pid = fork();
   if (pid == 0) {
-    execl("/bin/sh", "sh", script, NULL);
+    execl("/bin/bash", "bash", script, NULL);
     perror(RED "[vsw-error]: Falha ao executar vsw-tools..." RST);
     exit(EXIT_FAILURE);  
   }
