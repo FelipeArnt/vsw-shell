@@ -42,14 +42,13 @@ init_ensaio() {
   # SANITIZAR INPUTS
   ler_input_validado "Digite o protocolo da amostra: " protocolo PROTOCOLO
   ler_input_validado "Digite o orçamento da amostra: " orcamento ORCAMENTO
+  ler_input_validado "Digite o IP da amostra: " ip IP
 
   PREFIX="${ORCAMENTO// /_}"
 
   # Dispositivo
   log "Verificando dispositivo ADB..."
-  adb wait-for-device || die "Nenhum dispositivo detectado. Verifique o cabo/USB-debug."
-  SERIAL=$(adb get-serialno)
-  log "Dispositivo detectado: ${SERIAL}"
+  adb connect $IP
 }
 
 exec_ensaio() {
@@ -66,7 +65,6 @@ save_ensaio() {
 {
   "protocolo": "$PROTOCOLO",
   "orcamento": "$ORCAMENTO",
-  "serial": "$SERIAL",
   "kernel_version:" "$(adb shell uname -r)"
   "android_versao": "$(adb shell getprop ro.build.version.release)",
   "modelo": "$(adb shell getprop ro.product.model)"
