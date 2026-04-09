@@ -1,3 +1,8 @@
+/* VSW-SHELL
+ * @author: Felipe Arnt 
+ * LABELO-VSW
+ */
+
 #define _GNU_SOURCE          // Requisito para o getline()
 #include <stdio.h>           // Requisito para o printf()
 #include <unistd.h>          // Requisito para fork()
@@ -9,6 +14,7 @@
 /*
  * Shell builtins
  */
+
 int vsw_cd(char **args);
 int vsw_help(char **args);
 int vsw_checksum(char **args);
@@ -290,17 +296,6 @@ int vsw_exit(char **args)
     printf("[vsw]: Saindo...\n");
     return 0;
 }
-
-/*
-int vsw_it(char **args)
-{
-  if (args[1] == NULL) {
-    int return_status = /usr/local/bin/it 
-// it.sh sera desenvolvido para que leia o input do usuario e assim, ira printar apenas a man especifica do ensaio.
-  }
-}
-*/
-
 /* [Executor da shell] */
 
 int vsw_launch(char **args)
@@ -348,9 +343,6 @@ void vsw_loop(void)
     char *line;
     char **args;
     int status;
-
-    // Carregar histórico se existir
-    //system("test -f .vsw_history && history -r .vsw_history");
 
     do {
         char cwd[1024];
