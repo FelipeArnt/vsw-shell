@@ -43,8 +43,6 @@ int vsw_exit(char **args);
 
 /* Builtins para Ensaios Funcionais */
 int vsw_roteador(char **args);        /*   Nmap com presets     */
-int vsw_checksum(char **args);       /*   sha256/crc32/md5     */
-int vsw_hexsend(char **args);       /*   Envia hex via netcat */
 int vsw_tabela(char **args);
 int vsw_autometro(char **args);
 int vsw_comparador(char **args);

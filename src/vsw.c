@@ -90,13 +90,12 @@ int vsw_help(char **args)
 {
     (void)args;  // Evita warning de unused paramete 
 
-    printf(G"["RST"vsw-shell" G"]: "RST"Digite nome de programas, argumentos e pressione enter!!\n");
-    printf(G"["RST"vsw-shell" G"] - [" RST"Ensaios Funcionais" G"] \n");
+    printf(G"\n["RST"vsw-shell" G"] - [" RST"Ensaios Funcionais" G"] \n");
 
     for (int i = 0; i < vsw_num_builtins(); i++) {
         printf(" %s\n", builtin_str[i]);
     }
-    printf(G"["RST"vsw-shell" G"]: "RST"Use o comando man para exibir informações de outros programas!!\n");
+    printf(G"\n["RST"vsw-shell" G"]: "RST"Use o comando man para exibir informações de outros programas!!\n");
 
     return 1;
 }

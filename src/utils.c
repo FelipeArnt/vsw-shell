@@ -7,7 +7,7 @@
 void *Getcwd(char *buf, size_t size) {
     if (getcwd(buf, size) == NULL) {
         perror(RED "getcwd Falhou!" RST);
-        return NULL;  /* Corrigido: retorna NULL em caso de erro */
+        return NULL;
     }
     return buf;
 }
@@ -23,7 +23,7 @@ void *Malloc(size_t size)
         return NULL;
     }
 
-    ptr = malloc(size);  /* Corrigido: alocar memória */
+    ptr = malloc(size);
     if (!ptr) {
         perror(RED "Malloc Falhou!" RST);
         exit(EXIT_FAILURE);
